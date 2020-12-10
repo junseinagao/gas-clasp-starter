@@ -16,8 +16,7 @@
   },
   "lint-staged": {
     "*.ts": [
-      "prettier --write",
-      "eslint --fix src/**/*.ts"
+      "yarn lint"
     ]
   },
   "repository": {
