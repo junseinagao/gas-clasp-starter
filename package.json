@@ -7,17 +7,18 @@
     "lint": "eslint --fix src/**/*.ts",
     "test": "jest",
     "build": "npm run lint && npm run test && rimraf dist && webpack && cpx src/appsscript.json dist && cpx \"src/**/*.html\" dist",
-    "push": "npm run build && clasp push"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "push": "npm run build && clasp push",
+    "postinstall": "husky install"
   },
   "lint-staged": {
     "*.ts": [
       "yarn lint"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "repository": {
     "type": "git",
@@ -44,7 +45,7 @@
     "eslint-config-prettier": "6.13.0",
     "eslint-plugin-prettier": "3.1.4",
     "gas-webpack-plugin": "1.2.0",
-    "husky": "^4.3.5",
+    "husky": "^5.0.4",
     "jest": "26.5.3",
     "lint-staged": "^10.5.3",
     "prettier": "2.1.2",
